@@ -1,5 +1,5 @@
 import { createMcpExpressApp } from "@modelcontextprotocol/sdk/server/express.js";
-import { deleteMCPHandler, getMCPHandler, postMCPHandler } from "./endpointHandlers.js";
+import { deleteMCPHandler, getMCPHandler, postMCPHandler } from "./core/endpointHandlers.js";
 
 const app = createMcpExpressApp();
 

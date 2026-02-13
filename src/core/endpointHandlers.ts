@@ -2,7 +2,7 @@ import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/
 import { isInitializeRequest } from "@modelcontextprotocol/sdk/types.js";
 import { Request, Response } from "express";
 import { randomUUID } from "node:crypto";
-import { createServer } from "./server.js";
+import { createServer } from "../server.js";
 
 // Map to store transports by session ID
 const transports: { [sessionId: string]: StreamableHTTPServerTransport } = {};
@@ -45,7 +45,7 @@ export const postMCPHandler = async (req: Request, res: Response) => {
       };
   
       // Connect to the MCP server
-      const server = createServer();
+      const server = await createServer();
       await server.connect(transport);
     } else {
       // Invalid request
