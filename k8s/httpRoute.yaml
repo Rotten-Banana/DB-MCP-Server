@@ -8,7 +8,7 @@ spec:
   - name: application-gateway
     namespace: envoy-gateway-system
   hostnames:
-  - "db-mcp-server.local"
+  - "mcp.db-server.local"
   rules:
   - backendRefs:
     - name: db-mcp-server-service
