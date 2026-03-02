@@ -1,7 +1,9 @@
 import { createMcpExpressApp } from "@modelcontextprotocol/sdk/server/express.js";
 import { deleteMCPHandler, getMCPHandler, postMCPHandler } from "./core/endpointHandlers.js";
 
-const app = createMcpExpressApp();
+const app = createMcpExpressApp({
+  allowedHosts: ['mcp.db-server.local'],
+});
 
 // Handle POST requests for client-to-server communication
 app.post('/mcp', postMCPHandler);
