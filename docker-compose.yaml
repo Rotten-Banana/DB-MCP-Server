@@ -1,0 +1,7 @@
+services:
+  db-mcp-server:
+    container_name: db-mcp-server
+    image: 13rottenbanana/db-mcp-server
+    build:
+      context: .
+      dockerfile: Dockerfile
